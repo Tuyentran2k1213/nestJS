@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     rawBody: true
   });
-  await app.listen(port || 3000);
+  await app.listen(process.env.PORT || 3000);
   console.log(`app listening at http://localhost:${port}`);
   
 }
